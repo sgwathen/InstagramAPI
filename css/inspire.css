@@ -1,0 +1,155 @@
+@charset "UTF-8";
+/* CSS Document */
+/* font-family: "franklin-gothic-urw-cond",sans-serif;
+font-style: normal;
+font-weight: 400; 
+
+font-family: "grafolita-script",sans-serif;
+font-style: normal;
+font-weight: 400;
+*/
+
+body {
+	background-color: white;
+}
+#headerspan {
+	background-color: #cccccc;
+	width: 100%;
+	height: 145px;
+	box-shadow: 0px 2px 2px #5F5F5F;
+}
+#container{
+	width: 1000px;
+	height: 100%;
+	margin: -145px auto 0px auto;
+}
+#header{
+	width: 100%;
+	height: 145px;
+	position: relative;
+	padding: 30px 10px 0px 10px;
+}
+#logo{
+	background: url(../images/inspire_me.png) no-repeat;
+	width: 312px;
+	height: 82px;
+	position: absolute;
+}
+#slogan{
+	font-family:"franklin-gothic-urw-cond", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	color: #4d4d4d;
+	position: relative;
+	top: 60px;
+	left: 100px;
+}
+#tagsearch, #popular, #go{
+	border-radius: 3px;
+	font-family:"franklin-gothic-urw-cond", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 21px;
+	color: #999;	
+}
+#tagsearch{
+	background: #fff url(../images/search.png) no-repeat 98% 50%;
+	width: 275px;
+	height: 30px;
+	padding: 0px 25px 0px 5px;
+	border: none;
+	border-bottom: #4d4d4d solid 1px;
+	border-right: #4d4d4d solid 1px;
+	position: relative;
+	float: right;
+	top: -20px;
+}
+#popular{
+	background-color: #fff;
+	width: 75px;
+	height: 30px;
+	position: relative;
+	clear: both;
+	float: right;
+	top: -11px;
+	right: 231px;
+	border: none;
+	text-align: center;
+}
+#go{
+	background-color: #fff;
+	width: 75px;
+	height: 30px;
+	position: relative;
+	float: right;
+	top: -11px;
+	right: -74px;
+	border: none;
+	text-align: center;
+}
+#popularClick{
+	background-color: #999;
+	color: #fff;
+}
+.pixGallery{
+	margin-top: 25px;
+	margin-bottom: 40px;
+	width: 100%;
+	height: 770px
+}
+.outline{
+	width: 179px;
+	height: 230px;
+	margin: 10px 10px;
+	border: 1px solid #999;
+	padding: 5px;
+	float: left;
+}
+.imglink{
+	width: 166px;
+	height: 166px;
+	position: relative;
+}
+.instaImgs{
+	width: 166px;
+	height: 166px;
+}
+.caption{
+	font-family:"franklin-gothic-urw-cond", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	color: #4d4d4d;
+	text-align: center
+}
+#footer{
+	font-family:"franklin-gothic-urw-cond", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	width: 100%;
+	height: 40px;
+	background: rgba(255,255,255,0.70);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align:center;
+}
+#footer p{
+	display: inline;
+	position: relative;
+	top: -3px;	
+}
+#instaLogo{
+	background: url(../images/instagram.png) no-repeat 0 0;
+	width: 111px;
+	height: 26px;
+}
+#instaHolder{
+	display: inline;
+	position: relative;
+	top: 10px;	
+}
+
