@@ -45,7 +45,7 @@ body {
 	top: 60px;
 	left: 100px;
 }
-#tagsearch, #popular, #go{
+#tagsearch, .popular, .go, .popularClick{
 	border-radius: 3px;
 	font-family:"franklin-gothic-urw-cond", sans-serif;
 	font-style: normal;
@@ -65,7 +65,7 @@ body {
 	float: right;
 	top: -20px;
 }
-#popular{
+.popular{
 	background-color: #fff;
 	width: 75px;
 	height: 30px;
@@ -76,8 +76,9 @@ body {
 	right: 231px;
 	border: none;
 	text-align: center;
+	outline: none !important;
 }
-#go{
+.go{
 	background-color: #fff;
 	width: 75px;
 	height: 30px;
@@ -87,10 +88,34 @@ body {
 	right: -74px;
 	border: none;
 	text-align: center;
+	outline: none !important;
 }
-#popularClick{
+.popularClick{
 	background-color: #999;
 	color: #fff;
+	width: 75px;
+	height: 30px;
+	position: relative;
+	clear: both;
+	float: right;
+	top: -11px;
+	right: 231px;
+	border: none;
+	text-align: center;
+	outline: none !important;
+}
+.goClick{
+	background-color: #999;
+	color: #fff;
+	width: 75px;
+	height: 30px;
+	position: relative;
+	float: right;
+	top: -11px;
+	right: -74px;
+	border: none;
+	text-align: center;
+	outline: none !important;
 }
 .pixGallery{
 	margin-top: 25px;
