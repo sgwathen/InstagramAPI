@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	//popularPics();
+	popularPics();
 	$('.popular').mousedown(function(e) {
         $(this).toggleClass('popularClick');
     })
@@ -19,10 +19,10 @@ $(document).ready(function() {
 		//initiate ajax call
 		searchTags(tag);
 	});
-	//$('.popular').click(function(e) {
-		//e.preventDefault();
-		//popularPics();
-	//});
+	$('.popular').click(function(e) {
+		e.preventDefault();
+		popularPics();
+	});
 	$('#tagsearch').keypress(function(e) {
 		if(e.which == 13) {
 			e.preventDefault();
@@ -49,26 +49,27 @@ var searchTags = function(tag) {
 				group += '<div class="caption">' + photo.caption.text + '</div></div>';
 			}
 		}); group += '</div>';
-		
-		$('.pixGallery').html(group);
+			$('.pixGallery').html(group);
 	});		
 };
-
-
-
-//.done(function(getTags){
-	//	var imageCounter=0;
-		//$.each(getTags.data, function(index, photo){
-			//var imageUrl = photo.images.standard_resolution.url;
-//			var captionDiv = '<div class="caption"></div>';
-	//		var result = $('.pix').html('<div class="outline"><a class="imglink" rel="group1" href="' + imageUrl + '"><img src="' + imageUrl + '" class="instaImgs" />' + captionDiv + "</div>");
-		//	if (photo.caption === null){
-			//	$('.caption').html('');	
-//			} else {
-	//			$('.caption').html(photo.caption.text);
-		//	}
-		//	$('.pixGallery').html(result);
-//		}); 
-	//});		
-//};
-
+var popularPics = function(popular) {
+	var getPopular = $.ajax({
+		url: "https://api.instagram.com/v1/media/popular?client_id=d5e832076cd44faa9fbcf7f98a2689bd",
+		dataType:"jsonp",
+		type:"GET"
+	}) .done(function(getPopular){
+		var imageCounter=0;
+		var group = '<div class="pix">';
+		$.each(getPopular.data, function(i, photo){
+			var imageUrl = photo.images.standard_resolution.url;
+			var captionDiv = '<div class="caption"></div>';
+			group += '<div class="outline"><a class="imglink" href="' + imageUrl + '"><img src="' + imageUrl + '" class="instaImgs" />';
+			if (photo.caption === null){
+				group += '<div class="caption"></div></div';	
+			} else {
+				group += '<div class="caption">' + photo.caption.text + '</div></div>';
+			}
+		}); group += '</div>';
+			$('.pixGallery').html(group);
+	});		
+};
