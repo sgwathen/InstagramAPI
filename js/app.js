@@ -50,7 +50,15 @@ var searchTags = function(tag) {
 			}
 		}); group += '</div>';
 			$('.pixGallery').html(group);
-	});		
+			$('a.instaImgs').fancybox({
+				'transitionIn'	:	'elastic',
+				'transitionOut'	:	'elastic',
+				'speedIn'		:	600,
+				'speedOut'		:	200,
+				'overlayShow'	:	true,
+				'overlayOpacity':	0.5	
+			});
+		});		
 };
 var popularPics = function(popular) {
 	var getPopular = $.ajax({
@@ -71,5 +79,13 @@ var popularPics = function(popular) {
 			}
 		}); group += '</div>';
 			$('.pixGallery').html(group);
+			$('a.instaImgs').fancybox({
+				'transitionIn'	:	'elastic',
+				'transitionOut'	:	'elastic',
+				'speedIn'		:	600,
+				'speedOut'		:	200,
+				'overlayShow'	:	true,
+				'overlayOpacity':	0.5	
+			});
 	});		
 };
