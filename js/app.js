@@ -29,6 +29,12 @@ $(document).ready(function() {
 			$('.go').click();	
 		}
 	});
+	$('.imglink').fancybox({
+		'openEffect'		:	'elastic',
+		'closeEffect'	:	'elastic',
+		'openSpeed'		:	200,
+		'closeSpeed'		:	100,
+	});
 });
 //client-id: d5e832076cd44faa9fbcf7f98a2689bd
 var searchTags = function(tag) {
@@ -42,7 +48,7 @@ var searchTags = function(tag) {
 		$.each(getTags.data, function(index, photo){
 			var imageUrl = photo.images.standard_resolution.url;
 			var captionDiv = '<div class="caption"></div>';
-			group += '<div class="outline"><a class="imglink" href="' + imageUrl + '"><img src="' + imageUrl + '" class="instaImgs" />';
+			group += '<div class="outline"><a class="imglink" rel="group1" href="' + imageUrl + '" title="' +photo.caption.text+ '"><img src="' + imageUrl + '" class="instaImgs" />';
 			if (photo.caption === null){
 				group += '<div class="caption"></div></div';	
 			} else {
@@ -50,14 +56,6 @@ var searchTags = function(tag) {
 			}
 		}); group += '</div>';
 			$('.pixGallery').html(group);
-			$('a.instaImgs').fancybox({
-				'transitionIn'	:	'elastic',
-				'transitionOut'	:	'elastic',
-				'speedIn'		:	600,
-				'speedOut'		:	200,
-				'overlayShow'	:	true,
-				'overlayOpacity':	0.5	
-			});
 		});		
 };
 var popularPics = function(popular) {
@@ -71,7 +69,7 @@ var popularPics = function(popular) {
 		$.each(getPopular.data, function(i, photo){
 			var imageUrl = photo.images.standard_resolution.url;
 			var captionDiv = '<div class="caption"></div>';
-			group += '<div class="outline"><a class="imglink" href="' + imageUrl + '"><img src="' + imageUrl + '" class="instaImgs" />';
+			group += '<div class="outline"><a class="imglink" rel="group1" href="' + imageUrl + '" title="' +photo.caption.text+ '"><img src="' + imageUrl + '" class="instaImgs" />';
 			if (photo.caption === null){
 				group += '<div class="caption"></div></div';	
 			} else {
@@ -79,13 +77,5 @@ var popularPics = function(popular) {
 			}
 		}); group += '</div>';
 			$('.pixGallery').html(group);
-			$('a.instaImgs').fancybox({
-				'transitionIn'	:	'elastic',
-				'transitionOut'	:	'elastic',
-				'speedIn'		:	600,
-				'speedOut'		:	200,
-				'overlayShow'	:	true,
-				'overlayOpacity':	0.5	
-			});
 	});		
 };
