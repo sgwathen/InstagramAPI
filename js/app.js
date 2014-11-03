@@ -19,10 +19,10 @@ $(document).ready(function() {
 		//initiate ajax call
 		searchTags(tag);
 	});
-	$('.popular').click(function(e) {
-		e.preventDefault();
-		popularPics();
-	});
+	//$('.popular').click(function(e) {
+		//e.preventDefault();
+		//popularPics();
+	//});
 	$('#tagsearch').keypress(function(e) {
 		if(e.which == 13) {
 			e.preventDefault();
@@ -33,19 +33,42 @@ $(document).ready(function() {
 //client-id: d5e832076cd44faa9fbcf7f98a2689bd
 var searchTags = function(tag) {
 	var getTags = $.ajax({
-		url: "https://api.instagram.com/v1/tags" + tag + "/media/recent?client_id=d5e832076cd44faa9fbcf7f98a2689bd",
+		url: "https://api.instagram.com/v1/tags/" + tag + "/media/recent?client_id=d5e832076cd44faa9fbcf7f98a2689bd",
 		dataType:"jsonp",
 		type:"GET"
 	}) .done(function(getTags){
-		var imageUrl = photo.images.standard_resolution.url;
-		var captionDiv = '<div class="caption"></div>'
-		$.each(getPopular.data, function(index, photo){
-			$('.outline').html('<a class="imglink" href="' + imageUrl + '"><img src="' + imageUrl + '"/>' + captionDiv);
+		var imageCounter=0;
+		var group = '<div class="pix">';
+		$.each(getTags.data, function(index, photo){
+			var imageUrl = photo.images.standard_resolution.url;
+			var captionDiv = '<div class="caption"></div>';
+			group += '<div class="outline"><a class="imglink" href="' + imageUrl + '"><img src="' + imageUrl + '" class="instaImgs" />';
 			if (photo.caption === null){
-				$('.caption').html('');	
+				group += '<div class="caption"></div></div';	
 			} else {
-				$('.caption').html(photo.caption.text);
+				group += '<div class="caption">' + photo.caption.text + '</div></div>';
 			}
-		});
+		}); group += '</div>';
+		
+		$('.pixGallery').html(group);
 	});		
 };
+
+
+
+//.done(function(getTags){
+	//	var imageCounter=0;
+		//$.each(getTags.data, function(index, photo){
+			//var imageUrl = photo.images.standard_resolution.url;
+//			var captionDiv = '<div class="caption"></div>';
+	//		var result = $('.pix').html('<div class="outline"><a class="imglink" rel="group1" href="' + imageUrl + '"><img src="' + imageUrl + '" class="instaImgs" />' + captionDiv + "</div>");
+		//	if (photo.caption === null){
+			//	$('.caption').html('');	
+//			} else {
+	//			$('.caption').html(photo.caption.text);
+		//	}
+		//	$('.pixGallery').html(result);
+//		}); 
+	//});		
+//};
+

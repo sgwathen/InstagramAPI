@@ -123,11 +123,15 @@ body {
 	width: 100%;
 	height: 1000px
 }
+.pix {
+	width: 100%;
+}
 .outline{
 	width: 179px;
 	height: 230px;
 	margin: 10px 10px;
 	border: 1px solid #999;
+	border-radius: 4px;
 	padding: 5px;
 	float: left;
 }
@@ -141,6 +145,9 @@ body {
 	height: 166px;
 }
 .caption{
+	width: 165px;
+	max-height: 50px;
+	overflow:scroll;
 	font-family:"franklin-gothic-urw-cond", sans-serif;
 	font-style: normal;
 	font-weight: 400;
